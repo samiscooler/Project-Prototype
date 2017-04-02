@@ -1,7 +1,7 @@
 var c = document.getElementById("gameCanvas");
 var ctx = c.getContext("2d");
 
-const gameData = {
+var gameData = {
     width: c.width,
     height: c.height,
     fps: 30
