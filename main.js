@@ -16,4 +16,4 @@ levelManager.loadLevel(0);
 setInterval(function() {
 
     levelManager.renderCurrentLevel();
-}, 1000 / fps);
+}, 1000 / gameData.fps);
