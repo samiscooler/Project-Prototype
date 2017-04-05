@@ -48,15 +48,20 @@ function playerSprite(x, y) {
         for (var row in level.currentLevel) {
             for (var tile in level.currentLevel) {
                 if (level.currentLevel[row][tile] != 0 && level.currentLevel[row][tile] != "p") {
-                    if (colCheck(this, {
-                            x: tile * 50,
-                            y: row * 50,
-                            w: size[0],
-                            h: size[1]
-                        }, true) == "b") {
+                    var col = colCheck(this, {
+                        x: tile * 50,
+                        y: row * 50,
+                        w: size[0],
+                        h: size[1]
+                    }, true)
+                    if (col == "b") {
                         this.onGround = true;
                         this.yv = 0;
                         this.jumpTimer = 0;
+                    };
+                    if (col == "t") {
+                        this.yv = 0;
+                        this.jumpTimer = this.maxJump;
                     };
                 }
 
