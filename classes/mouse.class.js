@@ -1,15 +1,23 @@
 function mouseHandler() {
     this.mouseMode = "place";
 
+
     this.mouseModes = {
         place: {
             size: [50, 50],
-            colour: "black"
+            colour: "blue",
+            distance: 5
+        },
+        eraser: {
+            size: [50, 50],
+            colour: "red",
+            distance: 5
         }
     }
     this.render = function(loc) {
         switch (this.mouseMode) {
             case "place":
+                ctx.strokeStyle = this.mouseModes[this.mouseMode].colour;
                 ctx.strokeRect((Math.floor(loc.x / 50) * 50), (Math.floor(loc.y / 50) * 50), this.mouseModes[this.mouseMode].size[0], this.mouseModes[this.mouseMode].size[0]);
                 break;
         }
